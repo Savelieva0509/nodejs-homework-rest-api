@@ -6,10 +6,6 @@ const addSchema = Joi.object({
   phone: Joi.string().required(),
 });
 
-const updSchema = Joi.object({
-  name: Joi.string(),
-  email: Joi.string(),
-  phone: Joi.string(),
-});
 
-module.exports = { addSchema, updSchema };
+
+module.exports = addSchema;
