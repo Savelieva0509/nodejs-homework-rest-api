@@ -33,7 +33,7 @@ userSchema.post("save", handleMongooseError);
 const registerSchema = Joi.object({
   name: Joi.string().required(),
   email: Joi.string().required(),
-  password: Joi.string().min().required(),
+  password: Joi.string().min(6).required(),
   subscription: Joi.string()
     .valid(...roleList)
     .required(),
