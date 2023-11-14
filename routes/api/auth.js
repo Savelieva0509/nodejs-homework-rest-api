@@ -9,4 +9,10 @@ const router = express.Router();
 
 router.post("/register", validateBody(schemas.registerSchema), controller.register);
 
+router.post(
+  "/login",
+  validateBody(schemas.loginSchema),
+  controller.login
+);
+
 module.exports = router;
