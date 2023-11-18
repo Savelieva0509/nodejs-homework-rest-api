@@ -26,7 +26,7 @@ const register = async (req, res) => {
 };
 
 const login = async (req, res) => {
-  const { email, password, subscription } = req.body;
+  const { email, password } = req.body;
   const user = await User.findOne({ email });
 
   if (!user) {
@@ -48,8 +48,8 @@ const login = async (req, res) => {
   res.json({
     token,
     user: {
-      email,
-      subscription,
+      email: user.email,
+      subscription: user.subscription,
     },
   });
 };
@@ -67,9 +67,7 @@ const logout = async (req, res) => {
   const { _id } = req.user;
   await User.findByIdAndUpdate(_id, { token: "" });
 
-  res.json({
-    message: "Logout success"
-  })
+  res.status(204).json();
 };
 
 module.exports = {
