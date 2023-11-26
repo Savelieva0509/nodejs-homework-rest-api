@@ -3,8 +3,7 @@ const jwt = require("jsonwebtoken");
 const path = require("path");
 const gravatar = require("gravatar");
 const fs = require("fs/promises");
-const jimp = require ("jimp");
-
+const jimp = require("jimp");
 
 const { User } = require("../models/user");
 const { controllerWrapper, HttpError } = require("../helpers");
@@ -96,7 +95,7 @@ const updateAvatar = async (req, res) => {
   await User.findByIdAndUpdate(_id, { avatarURL });
 
   res.json({
-    "avatarURL": "тут будет ссылка на изображение",
+    "avatarURL": avatarURL,
   });
 };
 
