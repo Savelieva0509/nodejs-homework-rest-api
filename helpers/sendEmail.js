@@ -14,12 +14,4 @@ const sendEmail = async (data) => {
   return true;
 };
 
-// const email = {
-//   from: "savelieva0509@gmail.com",
-//   from_name: "Liudmyla Babenko",
-//   to: "harih87739@bustayes.com",
-//   subject: "Hello",
-//   body_text: "Hello World!",
-// };
-
 module.exports = sendEmail;
